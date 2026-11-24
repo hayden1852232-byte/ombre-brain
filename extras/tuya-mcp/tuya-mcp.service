@@ -1,0 +1,13 @@
+[Unit]
+Description=Tuya IR MCP server (哄睡玩偶)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+WorkingDirectory=/opt/tuya-mcp
+ExecStart=/opt/tuya-mcp/venv/bin/python /opt/tuya-mcp/server.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
